@@ -20,7 +20,12 @@ some of the data using the navigation links on the side.
 After hours of trying to make mongoose and mongoDB work, I found the most
 success using pg and PostgreSQL. This is a stripped down web sevice
 that does not utilize routes, controllers, or models in order to
-reduce complexity and time spent reviewing the code.
+reduce complexity and time spent reviewing the code. I would prefer
+to have added routers and controllers, but due to all the time lost
+working with mongoose and mongoDB, I had to make up for that lost time.
+The intent of this is to showcase my ability to put together a web service
+using a RESTful API model that communicates with a live PostgreSQL database
+and manipulates the data inside of the database.
 
 
 REQUIREMENTS
