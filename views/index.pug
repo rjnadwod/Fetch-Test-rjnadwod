@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1= title
+    body
+    p Welcome to the landing page for the #{title}, submitted by Riley Nadwodny.
+    p This web service is setup using NodeJS and a PostgreSQL database. 
+    div
+    p To get all transactions, navigate to localhost:3000/transactions or 'curl localhost:3000/transactions', or click the link to the left
+    p To add a transaction, curl the data into the database. Curls provided below
+      li curl --data "timestamp=2020-11-02T14:00:00Z&points=1000&payer=DANNON" http://localhost:3000/add_transaction
+      li curl --data "timestamp=2020-10-31T11:00:00Z&points=200&payer=UNILEVER" http://localhost:3000/add_transaction
+      li curl --data "timestamp=2020-10-31T15:00:00Z&points=-200&payer=DANNON" http://localhost:3000/add_transaction
+      li curl --data "timestamp=2020-11-01T14:00:00Z&points=10000&payer=MILLER COORS" http://localhost:3000/add_transaction
+      li curl --data "timestamp=2020-10-31T10:00:00Z&points=300&payer=DANNON" http://localhost:3000/add_transaction
+
+    p To get all payer balances, navigate to localhost:3000/transactions/payers, use the curl provided below, or click the link to the left
+      li curl localhost:3000/transactions/payers'
+    p To spend points, curl the service. Example curl is provided below, taken from the test guide.
+      li curl -X PUT -d "pointsToSpend=5000" http://localhost:3000/spendpoints
