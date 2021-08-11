@@ -17,6 +17,11 @@ The web service is easy to get up and running. You may use curl or
 Postman to make HTTP calls in addition to being able to view
 some of the data using the navigation links on the side.
 
+After hours of trying to make mongoose and mongoDB work, I found the most
+success using pg and PostgreSQL. This is a stripped down web sevice
+that does not utilize routes, controllers, or models in order to
+reduce complexity and time spent reviewing the code.
+
 
 REQUIREMENTS
 ------------
@@ -62,7 +67,7 @@ To add a transaction, curl the data into the database. You can also use Postman 
 
 To get all payer balances, navigate to localhost:3000/transactions/payers, use the curl provided below, or click the link to the left
  * curl localhost:3000/transactions/payers'
- 
+
 To spend points, curl the service. Example curl is provided below, taken from the test guide.
  * curl -X PUT -d "pointsToSpend=5000" http://localhost:3000/spendpoints
 
