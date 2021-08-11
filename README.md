@@ -47,29 +47,24 @@ have been downloaded, start the web service
 with 'node index.js', and the service will
 begin running at http://localhost:3000
 
+Instructions
+-----------
 
-CONFIGURATION
--------------
+All instructions shown here and also listed at http://localhost:3000/
 
-    1. Navigate to Administration > Extend and enable the module. The system
-       breadcrumb block has now been updated.
-    2. Navigate to Administration > Configuration > User Interface > Easy
-       Breadcrumb for configurations. Save Configurations.
+To begin, first add the transactions to the pgSQL database using the curls provided below.
+To add a transaction, curl the data into the database. You can also use Postman with a POST request. Curls provided below
+ * curl --data "timestamp=2020-11-02T14:00:00Z&points=1000&payer=DANNON" http://localhost:3000/add_transaction
+ * curl --data "timestamp=2020-10-31T11:00:00Z&points=200&payer=UNILEVER" http://localhost:3000/add_transaction
+ * curl --data "timestamp=2020-10-31T15:00:00Z&points=-200&payer=DANNON" http://localhost:3000/add_transaction
+ * curl --data "timestamp=2020-11-01T14:00:00Z&points=10000&payer=MILLER COORS" http://localhost:3000/add_transaction
+ * curl --data "timestamp=2020-10-31T10:00:00Z&points=300&payer=DANNON" http://localhost:3000/add_transaction
 
-Configurable parameters:
- * Include / Exclude the front page as a segment in the breadcrumb.
- * Include / Exclude the current page as the last segment in the breadcrumb.
- * Use the real page title when it is available instead of always deducing it
-   from the URL.
- * Print the page's title segment as a link.
- * Make the language path prefix a segment on multilingual sites where a path
-   prefix ("/en") is used.
- * Use menu title as fallback instead of raw path component.
- * Remove segments of the breadcrumb that are identical.
- * Use a custom separator between the breadcrumb's segments. (TODO)
- * Choose a transformation mode for the segments' title.
- * Make the 'capitalizator' ignore some words.
-
+To get all payer balances, navigate to localhost:3000/transactions/payers, use the curl provided below, or click the link to the left
+ * curl localhost:3000/transactions/payers'
+ 
+To spend points, curl the service. Example curl is provided below, taken from the test guide.
+ * curl -X PUT -d "pointsToSpend=5000" http://localhost:3000/spendpoints
 
 Contributors
 -----------
