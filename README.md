@@ -36,20 +36,15 @@ This web service uses the following npm modules:
 INSTALLATION
 ------------
 
+Install nodeJS and npm if they are not already installed
+on your machine. You can find an installer at https://nodejs.org/en/download/
+
 Download this repository onto your machine. Open the project folder
-in terminal, VS Code, or editor of your choosing. Run the below commands
-to install all necessary modules/packages.
+in terminal, VS Code, or editor of your choosing. 
 
-Commands:
- * npm install
- * npm i express pg
- * npm i nodemon async
- * npm i cookie-parser morgan
- * npm i http-errors debug
- * npm i pug
-
-Once all of the modules/packages have been downloaded, start the
-web service with 'node index.js', and the service will
+Once all of the repository and all of the modules/packages
+have been downloaded, start the web service 
+with 'node index.js', and the service will
 begin running at http://localhost:3000
 
 
